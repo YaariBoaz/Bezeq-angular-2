@@ -1,0 +1,15 @@
+<breadcrumb [menu]="breadcrumb" separator="&#8594;" class="mb-4"></breadcrumb>
+
+<md-input-container style="width: 100%" class="mb-2">
+  <input mdInput placeholder="Type to filter the name column..." required (keyup)='updateFilter($event)'>
+</md-input-container>
+
+<ngx-datatable
+  class='material'
+  [columns]="columns"
+  [columnMode]="'force'"
+  [headerHeight]="'auto'"
+  [rowHeight]="'auto'"
+  [loadingIndicator]="loadingIndicator"
+  [rows]='rows'>
+</ngx-datatable>

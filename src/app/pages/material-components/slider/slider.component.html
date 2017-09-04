@@ -1,0 +1,39 @@
+<breadcrumb [menu]="breadcrumb" separator="&#8594;" class="mb-4"></breadcrumb>
+
+<card [title]="'Basic slider'">
+  <md-slider thumbLabel></md-slider>
+</card>
+
+<card [title]="'Selecting a value'">
+  <md-slider min="1" max="5" step="0.5" value="1.5" #slider2></md-slider> <span>{{slider2.value}}</span>
+</card>
+
+<card [title]="'Orientation'">
+  <p>
+    <strong>Horizontal</strong><br>
+    <md-slider></md-slider>
+  </p>
+
+  <p>
+    <strong>Vertical</strong><br>
+    <md-slider vertical></md-slider>
+  </p>
+
+  <p>
+    <strong>Invert</strong><br>
+    <md-slider invert></md-slider>
+  </p>
+</card>
+
+<card [title]="'Adding ticks'">
+  <md-slider thumbLabel tickInterval="1"></md-slider>
+</card>
+
+<card [title]="'Tick marks'">
+  <md-slider step="4" tickInterval="3"></md-slider>
+  <md-slider tickInterval="auto"></md-slider>
+</card>
+
+<card [title]="'Disabled'" class="mb-0">
+  <md-slider disabled value="5"></md-slider>
+</card>

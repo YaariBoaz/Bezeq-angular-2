@@ -1,0 +1,27 @@
+.ngx-datatable.material {
+  .datatable-header {
+    background: main-color(100);
+    font-size: 1.2rem;
+
+    .resize-handle {
+      border-right-color: rgba(#fff,.2);
+    }
+    .datatable-header-cell {
+      color: main-contrast(100);
+    }
+  }
+  .datatable-body {
+    .datatable-scroll {
+      vertical-align: top;
+    }
+    .progress-linear {
+      .container {
+        background-color: main-color(200);
+
+        .bar {
+          background-color: main-color(500);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+<breadcrumb [menu]="breadcrumb" separator="&#8594;" class="mb-4"></breadcrumb>
+
+<div class="row">
+  <div class="col-lg-6">
+    <card title="Line Chart">
+      <canvas
+        baseChart
+        [datasets]="lineChartData"
+        [labels]="lineChartLabels"
+        [options]="lineChartOptions"
+        [colors]="lineChartColors"
+        [legend]="lineChartLegend"
+        [chartType]="lineChartType"></canvas>
+    </card>
+  </div>
+
+  <div class="col-lg-6">
+    <card title="Bar Chart">
+      <canvas
+        baseChart
+        [datasets]="barChartData"
+        [labels]="barChartLabels"
+        [options]="barChartOptions"
+        [legend]="barChartLegend"
+        [chartType]="barChartType"></canvas>
+    </card>
+  </div>
+
+  <div class="col-lg-6">
+    <card title="Doughnut Chart">
+      <canvas
+        baseChart
+        [data]="doughnutChartData"
+        [labels]="doughnutChartLabels"
+        [chartType]="doughnutChartType"></canvas>
+    </card>
+  </div>
+
+  <div class="col-lg-6">
+    <card title="Radar Chart">
+      <canvas
+        baseChart
+        [datasets]="radarChartData"
+        [labels]="radarChartLabels"
+        [chartType]="radarChartType"></canvas>
+    </card>
+  </div>
+
+  <div class="col-lg-6">
+    <card title="Pie Chart" class="mb-lg-0">
+      <canvas
+        baseChart
+        [data]="pieChartData"
+        [labels]="pieChartLabels"
+        [chartType]="pieChartType"></canvas>
+    </card>
+  </div>
+
+  <div class="col-lg-6">
+    <card title="Polar Area Chart" class="mb-0">
+      <canvas
+        baseChart
+        [data]="polarAreaChartData"
+        [labels]="polarAreaChartLabels"
+        [legend]="polarAreaLegend"
+        [chartType]="polarAreaChartType"
+        [options]="polarAreaChartOptions"></canvas>
+    </card>
+  </div>
+</div>

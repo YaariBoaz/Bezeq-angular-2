@@ -1,0 +1,37 @@
+<breadcrumb [menu]="breadcrumb" separator="&#8594;" class="mb-4"></breadcrumb>
+
+<card [title]="'Basic toolbar'">
+  <md-toolbar>My App</md-toolbar>
+</card>
+
+<card [title]="'Multiple rows'">
+  <md-toolbar>
+    <span>First Row</span>
+
+    <md-toolbar-row>
+      <span>Second Row</span>
+    </md-toolbar-row>
+
+    <md-toolbar-row>
+      <span>Third Row</span>
+    </md-toolbar-row>
+  </md-toolbar>
+</card>
+
+<card [title]="'Positioning toolbar content'">
+  <md-toolbar color="primary">
+    <span>Title</span>
+
+    <span class="example-fill-remaining-space"></span>
+
+    <span>Right Aligned</span>
+  </md-toolbar>
+</card>
+
+<card [title]="'Theming'" class="mb-0">
+  <md-toolbar color="primary">Primary</md-toolbar>
+  <br>
+  <md-toolbar color="accent">Accent</md-toolbar>
+  <br>
+  <md-toolbar color="warn">Warning</md-toolbar>
+</card>

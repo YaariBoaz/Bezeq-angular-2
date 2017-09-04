@@ -1,0 +1,190 @@
+// Material palettes:
+// $mat-red, $mat-pink, $mat-purple, $mat-deep-purple, $mat-indigo, $mat-blue, $mat-light-blue, $mat-cyan, $mat-teal,
+// $mat-green, $mat-light-green, $mat-lime, $mat-yellow, $mat-amber, $mat-orange, $mat-deep-orange, $mat-brown,
+// $mat-grey, $mat-blue-grey
+
+//Main palette
+$palette: (
+  50 : #e6e6e7,
+  100 : #bfc1c4,
+  200 : #95989d,
+  300 : #6b6e76,
+  400 : #4b4f58,
+  500 : #2b3643,
+  600 : #262b35,
+  700 : #364150,
+  800 : #1a1e26,
+  900 : #101319,
+  A100 : #5d93ff,
+  A200 : #2a71ff,
+  A400 : #0052f6,
+  A700 : #004add,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+@function main-color($key: $palette) {
+  @return map-get($palette, $key);
+}
+@function main-contrast($key: $palette) {
+  @return map-get(map-get($palette, contrast), $key);
+}
+
+//Accent palette
+$accent-palette: (
+  50 : #fae0e0,
+  100 : #f2b3b3,
+  200 : #ea8080,
+  300 : #e24d4d,
+  400 : #db2626,
+  500 : #d50000,
+  600 : #d00000,
+  700 : #ca0000,
+  800 : #c40000,
+  900 : #ba0000,
+  A100 : #ffe3e3,
+  A200 : #ffb0b0,
+  A400 : #ff7d7d,
+  A700 : #ff6363,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+@function accent-color($key: $accent-palette) {
+  @return map-get($accent-palette, $key);
+}
+@function accent-contrast($key: $accent-palette) {
+  @return map-get(map-get($accent-palette, contrast), $key);
+}
+
+$success-color: #81C784;
+$info-color: #64B5F6;
+$warning-color: #FFB74D;
+$danger-color: #e24d4d;
+
+//Main
+$mainBg: #505050;
+$main-fs: 15px;
+$main-ff: 'Nunito', sans-serif;
+$main-fw: 400;
+$module: 11px;
+$main-lh: ($module * 2 / $main-fs);
+$module-rem: ($module / $main-fs) * 1rem;
+
+//Second
+$second-ff: 'Roboto', sans-serif;
+
+//Animationng serve
+$animation: ease-in-out;
+
+//Media
+$max543 : only screen and (max-width: 543px);
+$min544 : only screen and (min-width: 544px);
+$max767 : only screen and (max-width: 767px);
+$min768 : only screen and (min-width: 768px);
+$max991 : only screen and (max-width: 991px);
+$min992 : only screen and (min-width: 992px);
+$max1199 : only screen and (max-width: 1199px);
+$min1200 : only screen and (min-width: 1200px);
+
+//Headers
+$headers-ff: $second-ff;
+$headers-fw: 500;
+
+//Top navbar
+$navbar-height: $module-rem * 5;
+$navbar-bg: main-color(500);
+$navbar-color: main-contrast(500);
+$navbar-icon-color: main-contrast(500);
+$navbar-icon-color-hover: accent-color(300);
+$navbar-dropdown-bg: #fff;
+$navbar-dropdown-bg-hover: main-color(500);
+$navbar-dropdown-color: main-color(500);
+$navbar-dropdown-color-hover: main-contrast(500);
+$navbar-dropdown-dark-bg: main-color(300);
+
+//Second navbar
+$second-navbar-bg: #364150;
+$second-navbar-accent: accent-color(500);
+$second-navbar-width: $module-rem * 22;
+$second-navbar-compress-width: $module-rem * 6;
+
+//Menu
+$menu: (
+  accent-color: accent-color(500),
+
+  //item
+  item-color: main-color(500),
+  item-hover-color: accent-color(500),
+  item-active-color: accent-color(500),
+  item-group-color: main-color(300),
+  item-bg: transparent,
+  item-hover-bg: transparent,
+  item-active-bg: transparent,
+  item-group-bg-compress: main-color(200),
+
+  //separator
+  separator: main-color(300),
+
+  //icon
+  icon-color: inherit,
+  icon-hover-color: inherit,
+  icon-active-color: accent-color(500),
+  icon-br: 3px,
+
+  //badge
+  badge-color: rgba(accent-color(500),.2),
+  badge-bg: accent-color(500),
+
+  //sub
+  sub-bg: transparent,
+  sub-separator: main-color(300)
+);
+
+//Footer
+$footer-bg: main-color(500);
+$footer-color: main-contrast(500);
+
+//Card
+$card-header-bg: main-color(50);
+$card-header-color: main-contrast(50);
+
+//Preloader
+$loader-overlay-bg: #fff;
+$loader-colors: (
+  1: main-color(300),
+  2: accent-color(500),
+  3: main-color(900),
+  4: main-color(900),
+  5: main-color(900)
+);
+
+
+
+

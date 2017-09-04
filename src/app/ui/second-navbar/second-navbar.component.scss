@@ -1,0 +1,53 @@
+@import '../../../assets/sass/variable';
+
+:host {
+  background: $second-navbar-bg;
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translate3d(0,0,0);
+  transition:
+    left .2s $animation,
+    right .2s $animation;
+  width: $second-navbar-width;
+  z-index: 9996;
+  @media #{$max991} {
+    left: -($second-navbar-width);
+  }
+  .rtl & {
+    left: auto;
+    right: 0;
+    @media #{$max991} {
+      left: auto;
+      right: -($second-navbar-width);
+    }
+  }
+
+  .second-navbar-wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: $second-navbar-width;
+    @media #{$max991} {
+      position: relative;
+      z-index: 9999;
+    }
+  }
+  .sidebar-overlay {
+    background: rgba($second-navbar-bg,.2);
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    transition:
+      .2s opacity 0s $animation,
+      0s visibility .2s $animation;
+    visibility: hidden;
+    width: 100%;
+    z-index: 9998;
+  }
+}

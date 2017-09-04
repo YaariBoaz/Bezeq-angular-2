@@ -1,0 +1,9 @@
+<breadcrumb [menu]="breadcrumb" separator="&#8594;" class="mb-4"></breadcrumb>
+
+<card [title]="'Basic select'">
+  <md-select placeholder="Favorite food">
+    <md-option *ngFor="let food of foods" [value]="food.value">
+      {{ food.viewValue }}
+    </md-option>
+  </md-select>
+</card>

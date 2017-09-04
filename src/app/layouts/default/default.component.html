@@ -1,0 +1,15 @@
+<div class="site-container" [ngClass]="getClasses()" [attr.dir]="rtl ? 'rtl' : null">
+  <main-navbar [title]="pageTitle" (sidebarState)="sidebarState()" (additionState)="additionState()"></main-navbar>
+
+  <second-navbar></second-navbar>
+
+  <addition-navbar [ngClass]="{ 'open' : openedAddition }"></addition-navbar>
+
+  <main class="main-content">
+    <div class="main-content-wrap">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+
+  <div class="app-overlay"></div>
+</div>
