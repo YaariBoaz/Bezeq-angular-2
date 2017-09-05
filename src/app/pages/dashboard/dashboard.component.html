@@ -1,31 +1,31 @@
 <div [ngGrid]="gridConfig">
 
-	<div *ngFor="let box of boxes; let i = index" [(ngGridItem)]="box.config" (onItemChange)="updateItem(i, $event)" (onResize)="onResize(i, $event)"
+	<div *ngFor="let type of types" [(ngGridItem)]="type.config" (onItemChange)="updateItem(i, $event)" (onResize)="onResize(i, $event)"
 	 (onDrag)="onDrag(i, $event)">
 		<div class="handle widget">
 			<div class="widget-header">
-        <div class="row header-drag">
-            <div class="col-md-8 col-sm-10 col-xs-10">
-                <div class="widget-header-title">
-                    <img class="img-responsive inline-img" ng-src="/app/img/building.svg" height="50" width="50" src="/app/img/building.svg">
-                    <span class="ng-binding">בית הראשונים</span>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-2 col-xs-2">
-                <button class="widget-header-close-btn pull-left" title="הסר פאנל" ng-click="deleteWidget();">
+				<div class="row header-drag">
+					<div class="col-md-8 col-sm-10 col-xs-10">
+						<div class="widget-header-title">
+							<img class="img-responsive inline-img" ng-src="/app/img/building.svg" height="50" width="50" src="/app/img/building.svg">
+							<span class="ng-binding">בית הראשונים</span>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-2 col-xs-2">
+						<button class="widget-header-close-btn pull-left" title="הסר פאנל" ng-click="deleteWidget();">
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </button>
-				<button class="widget-header-close-btn pull-left" title="לינק">
+						<button class="widget-header-close-btn pull-left" title="לינק">
                     <a href="http://intern3.mprest.com/#!/home/HaRishonim" style="color:white">
                         <i class="fa fa-external-link" aria-hidden="true"></i> 
                     </a>
                 </button>
-				
-            </div>
 
-        </div>
-    </div>
-			Widget {{box.id}}
+					</div>
+
+				</div>
+			</div>
+			<type-template [type]="type.type"></type-template>
 
 		</div>
 	</div>

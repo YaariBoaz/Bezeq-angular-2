@@ -207,7 +207,12 @@ import { NgGridModule } from 'angular2-grid';
     SqueezeBoxModule,
     AmChartsModule
   ],
-  entryComponents: [DialogResultComponent, CalendarDialogComponent],
+  entryComponents: [DialogResultComponent, 
+  CalendarDialogComponent,
+  TypeTemplateFactory,
+  mLineChart,
+  PageGoogleMapComponent
+  ],
   bootstrap: [AppComponent]
 })
 

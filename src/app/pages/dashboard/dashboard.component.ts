@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { SharedService } from '../../layouts/shared-service';
 import { AmChartsService } from '@amcharts/amcharts3-angular';
-import {NgGrid, NgGridItem, NgGridConfig, NgGridItemConfig, NgGridItemEvent} from 'angular2-grid';
+import { NgGrid, NgGridItem, NgGridConfig, NgGridItemConfig, NgGridItemEvent } from 'angular2-grid';
+import { mLineChart } from './widgets/linechart.widget.component'
+import { PageGoogleMapComponent } from '../maps/google-map/google-map.component'
 
 interface Box {
-    id: number;
-    config: any;
+  id: number;
+  config: any;
 }
 
 
@@ -23,92 +25,102 @@ const breadcrumb: any[] = [
     link: ''
   }
 ];
- 
+
 @Component({
   moduleId: module.id,
   selector: 'page-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
- })
+})
+
+
 export class PageDashboardComponent {
-     
- private boxes: Array<Box> = [];
-	private rgb: string = '#efefef';
-	private curNum;
-	private gridConfig: NgGridConfig = <NgGridConfig>{
-		'margins': [5],
-		'draggable': true,
-		'resizable': true,
-		'max_cols': 0,
-		'max_rows': 0,
-		'visible_cols': 0,
-		'visible_rows': 0,
-		'min_cols': 1,
-		'min_rows': 1,
-		'col_width': 2,
-		'row_height': 2,
-		'cascade': 'up',
-		'min_width': 50,
-		'min_height': 50,
-		'fix_to_grid': false,
-		'auto_style': true,
-		'auto_resize': false,
-		'maintain_ratio': false,
-		'prefer_new': false,
-		'zoom_on_drag': false,
-		'limit_to_screen': true
-	};
-	private itemPositions: Array<any> = [];
+  @Input() tabs;
+  private boxes: Array<Box> = [];
+  private rgb: string = '#efefef';
+  private curNum;
+  private gridConfig: NgGridConfig = <NgGridConfig>{
+    'margins': [5],
+    'draggable': true,
+    'resizable': true,
+    'max_cols': 0,
+    'max_rows': 0,
+    'visible_cols': 0,
+    'visible_rows': 0,
+    'min_cols': 1,
+    'min_rows': 1,
+    'col_width': 2,
+    'row_height': 2,
+    'cascade': 'up',
+    'min_width': 50,
+    'min_height': 50,
+    'fix_to_grid': false,
+    'auto_style': true,
+    'auto_resize': false,
+    'maintain_ratio': false,
+    'prefer_new': false,
+    'zoom_on_drag': false,
+    'limit_to_screen': true
+  };
 
-	constructor() {
-		const dashconf = this._generateDefaultDashConfig();
-		for (var i = 0; i < dashconf.length; i++) {
-			const conf = dashconf[i];
-			conf.payload = 1 + i;
-			this.boxes[i] = { id: i + 1, config: conf };
-		}
-		this.curNum = dashconf.length + 1;
-	}
+  types = [
+    {
+      type: mLineChart,
+      config: { 'dragHandle': '.handle', 'col': 1, 'row': 1, 'sizex': 1, 'sizey': 1 }
+    },
+    
+    {
+      type: PageGoogleMapComponent,
+      config: { 'dragHandle': '.handle', 'col': 1, 'row': 2, 'sizex': 2, 'sizey': 1 }
+    }
 
-	addBox(): void {
-		const conf: NgGridItemConfig = this._generateDefaultItemConfig();
-		conf.payload = this.curNum++;
-		this.boxes.push({ id: conf.payload, config: conf });
-	}
+  ];
 
-	removeWidget(index: number): void {
-		if (this.boxes[index]) {
-			this.boxes.splice(index, 1);
-		}
-	}
+  private itemPositions: Array<any> = [];
 
-	updateItem(index: number, event: NgGridItemEvent): void {
-		// Do something here
-	}
+  constructor() {
 
-	onDrag(index: number, event: NgGridItemEvent): void {
-		// Do something here
-	}
+  }
 
-	onResize(index: number, event: NgGridItemEvent): void {
-		// Do something here
-	}
+  addBox(): void {
+    const conf: NgGridItemConfig = this._generateDefaultItemConfig();
+    conf.payload = this.curNum++;
+    this.boxes.push({ id: conf.payload, config: conf });
+  }
 
-	private _generateDefaultItemConfig(): NgGridItemConfig {
-		return { 'dragHandle': '.handle', 'col': 1, 'row': 1, 'sizex': 1, 'sizey': 1 };
-	}
+  removeWidget(index: number): void {
+    if (this.boxes[index]) {
+      this.boxes.splice(index, 1);
+    }
+  }
 
-	private _generateDefaultDashConfig(): NgGridItemConfig[] {
-		return [{ 'dragHandle': '.handle', 'col': 1, 'row': 1, 'sizex': 50, 'sizey': 40 },
-		{ 'dragHandle': '.handle', 'col': 1, 'row': 1, 'sizex': 1, 'sizey': 1 },
-		{ 'dragHandle': '.handle', 'col': 26, 'row': 1, 'sizex': 1, 'sizey': 1 },
-		{ 'dragHandle': '.handle', 'col': 51, 'row': 1, 'sizex': 75, 'sizey': 1 },
-		{ 'dragHandle': '.handle', 'col': 51, 'row': 26, 'sizex': 32, 'sizey': 40 },
-		{ 'dragHandle': '.handle', 'col': 83, 'row': 26, 'sizex': 1, 'sizey': 1 }];
-	}
+  updateItem(index: number, event: NgGridItemEvent): void {
+    // Do something here
+  }
+
+  onDrag(index: number, event: NgGridItemEvent): void {
+    // Do something here
+  }
+
+  onResize(index: number, event: NgGridItemEvent): void {
+    // Do something here
+  }
+
+  private _generateDefaultItemConfig(): NgGridItemConfig {
+    return { 'dragHandle': '.handle', 'col': 1, 'row': 1, 'sizex': 1, 'sizey': 1 };
+  }
+
+  private _generateDefaultDashConfig(): NgGridItemConfig[] {
+    return [{ 'dragHandle': '.handle', 'col': 1, 'row': 1, 'sizex': 50, 'sizey': 40 },
+    { 'dragHandle': '.handle', 'col': 1, 'row': 1, 'sizex': 1, 'sizey': 1 },
+    { 'dragHandle': '.handle', 'col': 26, 'row': 1, 'sizex': 1, 'sizey': 1 },
+    { 'dragHandle': '.handle', 'col': 51, 'row': 1, 'sizex': 75, 'sizey': 1 },
+    { 'dragHandle': '.handle', 'col': 51, 'row': 26, 'sizex': 32, 'sizey': 40 },
+    { 'dragHandle': '.handle', 'col': 83, 'row': 26, 'sizex': 1, 'sizey': 1 }];
+  }
 
 
   ngOnInit() {
   }
-  
+
 }
