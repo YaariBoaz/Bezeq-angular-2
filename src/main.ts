@@ -7,8 +7,7 @@ import 'hammerjs';
 import 'chart.js';
 import 'rxjs/Rx';
 
-if (environment.production) {
   enableProdMode();
-}
+
 
 platformBrowserDynamic().bootstrapModule(AppModule);

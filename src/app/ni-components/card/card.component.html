@@ -19,14 +19,38 @@
    'color': customColor
   }"
 >
-  <h3
+  <div
     class="card-header h5"
-    *ngIf="title"
     [ngClass]="{
       'text-right': align === 'right',
       'text-center': align === 'center'
     }"
-  >{{title}}</h3>
+  >
+  <div class="widget-header">
+				<div class="row header-drag">
+					<div class="col-md-7 col-sm-10 col-xs-10">
+						<div class="widget-header-title">
+							<img class="img-responsive inline-img" ng-src="/app/img/building.svg" height="50" width="50" src="/app/img/building.svg">
+							<span class="ng-binding">{{title}}</span>
+						</div>
+					</div>
+					<div class="col-md-5 col-sm-2 col-xs-2">
+						<button class="widget-header-close-btn pull-left" title="הסר פאנל" ng-click="deleteWidget();">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+						<button class="widget-header-close-btn pull-left" title="לינק">
+                    <a href="http://intern3.mprest.com/#!/home/HaRishonim" style="color:white">
+                        <i class="fa fa-external-link" aria-hidden="true"></i> 
+                    </a>
+                </button>
+
+					</div>
+
+				</div>
+			</div>
+  
+
+</div>
 
   <div
     class="card-content"

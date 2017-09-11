@@ -12,7 +12,9 @@
     border: 1px solid $card-header-bg;
     border-radius: 3px;
     box-shadow: 1px 1px 5px 0px rgba(main-color(500),.25);
-    position: relative;
+    height: 100%;
+    position: absolute;
+    width: 100%;
 
     &:not(.outline-card) {
       border: 0 !important;

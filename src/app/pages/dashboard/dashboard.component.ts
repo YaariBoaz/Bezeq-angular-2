@@ -3,7 +3,7 @@ import { SharedService } from '../../layouts/shared-service';
 import { AmChartsService } from '@amcharts/amcharts3-angular';
 import { NgGrid, NgGridItem, NgGridConfig, NgGridItemConfig, NgGridItemEvent } from 'angular2-grid';
 import { mLineChart } from './widgets/linechart.widget.component'
-import { PageGoogleMapComponent } from '../maps/google-map/google-map.component'
+import { MapWidgetComponent } from './widgets/map/map.component'
 
 interface Box {
   id: number;
@@ -66,12 +66,12 @@ export class PageDashboardComponent {
   types = [
     {
       type: mLineChart,
-      config: { 'dragHandle': '.handle', 'col': 1, 'row': 1, 'sizex': 1, 'sizey': 1 }
+      config: { 'dragHandle': '.handle', 'col': 1, 'row': 1, 'sizex': 1, 'sizey': 1 , title:"גרף"}
     },
     
     {
-      type: PageGoogleMapComponent,
-      config: { 'dragHandle': '.handle', 'col': 1, 'row': 2, 'sizex': 2, 'sizey': 1 }
+      type: MapWidgetComponent,
+      config: { 'dragHandle': '.handle', 'col': 1, 'row': 2, 'sizex': 2, 'sizey': 1, 'title':"מפה" }
     }
 
   ];

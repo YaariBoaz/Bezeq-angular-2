@@ -103,6 +103,7 @@ import { TypeTemplateFactory } from './pages/dashboard/type.template.componenet'
 import { mLineChart } from './pages/dashboard/widgets/linechart.widget.component'
 
 import { NgGridModule } from 'angular2-grid';
+import { MapWidgetComponent } from './pages/dashboard/widgets/map/map.component';
 
 @NgModule({
   declarations: [
@@ -115,7 +116,7 @@ import { NgGridModule } from 'angular2-grid';
 
     TypeTemplateFactory,
     mLineChart,
-
+MapWidgetComponent,
     A2CardComponent,
     AlertComponent,
     BadgeComponent,
@@ -184,7 +185,8 @@ import { NgGridModule } from 'angular2-grid';
     PageLayoutsComponent,
     PageNg2ChartsComponent,
     PageNgxChartsComponent,
-    PageAmchartsComponent
+    PageAmchartsComponent,
+ 
   ],
   imports: [
     BrowserModule,
@@ -211,7 +213,7 @@ import { NgGridModule } from 'angular2-grid';
   CalendarDialogComponent,
   TypeTemplateFactory,
   mLineChart,
-  PageGoogleMapComponent
+  MapWidgetComponent
   ],
   bootstrap: [AppComponent]
 })
