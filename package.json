@@ -25,6 +25,7 @@
     "@angular/platform-browser": "4.2.6",
     "@angular/platform-browser-dynamic": "4.2.6",
     "@angular/router": "4.2.6",
+    "@ngrx/store": "^4.0.3",
     "@swimlane/ngx-charts": "5.3.1",
     "@swimlane/ngx-datatable": "9.3.0",
     "@types/leaflet": "1.0.63",
@@ -38,6 +39,7 @@
     "leaflet": "1.0.3",
     "ng2-charts": "1.6.0",
     "ng2-validation": "4.2.0",
+    "reselect": "^3.0.1",
     "rxjs": "5.4.2",
     "squeezebox": "1.1.12",
     "zone.js": "0.8.12"
