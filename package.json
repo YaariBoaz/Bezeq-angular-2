@@ -12,7 +12,7 @@
     "e2e": "ng e2e"
   },
   "dependencies": {
-    "@agm/core": "1.0.0-beta.0",
+    "@agm/core": "^1.0.0-beta.1",
     "@amcharts/amcharts3-angular": "1.2.1",
     "@angular/animations": "4.2.6",
     "@angular/cdk": "2.0.0-beta.8",
@@ -40,7 +40,8 @@
     "ng2-charts": "1.6.0",
     "ng2-validation": "4.2.0",
     "reselect": "^3.0.1",
-    "rxjs": "5.4.2",
+    "rx-pub-sub": "^1.0.0",
+    "rxjs": "^5.4.2",
     "squeezebox": "1.1.12",
     "zone.js": "0.8.12"
   },
@@ -60,6 +61,7 @@
     "karma-jasmine": "1.1.0",
     "karma-jasmine-html-reporter": "0.2.2",
     "protractor": "5.1.2",
+    "rx-pubsub": "^0.1.2",
     "ts-node": "3.1.0",
     "tslint": "5.4.3",
     "typescript": "2.3.4"

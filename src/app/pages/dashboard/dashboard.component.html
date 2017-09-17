@@ -1,11 +1,18 @@
-<div [ngGrid]="gridConfig">
+<div class="row">
+	<div class="col-md-5">
+		<map-widget></map-widget>
+	</div>
+	<div class="col-md-7">
+		<div [ngGrid]="gridConfig">
 
-	<div *ngFor="let type of types" [(ngGridItem)]="type.config" (onItemChange)="updateItem(i, $event)" (onResize)="onResize(i, $event)"
-	 (onDrag)="onDrag(i, $event)">
-		<div class="handle widget">
-			<card class="dashboard-card" title="{{type.config.title}}">
-				<type-template [type]="type.type"></type-template>
-			</card>
+			<div *ngFor="let type of types" [(ngGridItem)]="type.config" (onItemChange)="updateItem(i, $event)" (onResize)="onResize(i, $event)"
+			 (onDrag)="onDrag(i, $event)">
+				<div class="handle widget">
+					<card class="dashboard-card" title="{{type.config.title}}">
+						<type-template [type]="type.type"></type-template>
+					</card>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

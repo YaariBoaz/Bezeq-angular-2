@@ -104,6 +104,11 @@ import { mLineChart } from './pages/dashboard/widgets/linechart.widget.component
 
 import { NgGridModule } from 'angular2-grid';
 import { MapWidgetComponent } from './pages/dashboard/widgets/map/map.component';
+import { PubSubService } from './PubSub/PubSub'
+
+import { DemoComponent } from './pages/dashboard/widgets/demo/demo.component'
+
+
 
 @NgModule({
   declarations: [
@@ -123,6 +128,9 @@ MapWidgetComponent,
     BreadcrumbComponent,
     FileComponent,
     NIHTimelineComponent,
+
+
+DemoComponent,
 
     PageDashboardComponent,
     PageDashboard2Component,
@@ -213,8 +221,10 @@ MapWidgetComponent,
   CalendarDialogComponent,
   TypeTemplateFactory,
   mLineChart,
-  MapWidgetComponent
+  MapWidgetComponent,
+  DemoComponent
   ],
+  providers:[PubSubService],
   bootstrap: [AppComponent]
 })
 

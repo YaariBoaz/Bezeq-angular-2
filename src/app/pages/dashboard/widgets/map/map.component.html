@@ -1,7 +1,9 @@
 
-  <agm-map [latitude]="lat" [longitude]="lng">
-    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+
+  <agm-map [latitude]="lat" [longitude]="lng" style="height: 100%;">
+    <agm-marker  (markerClick)="markerClick(this)" [latitude]="lat" [longitude]="lng"></agm-marker>
   </agm-map>
+
 
 
  

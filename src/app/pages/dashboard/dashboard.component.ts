@@ -1,9 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
+
+
+ import { Component, OnInit, Input } from '@angular/core';
+
 import { SharedService } from '../../layouts/shared-service';
 import { AmChartsService } from '@amcharts/amcharts3-angular';
 import { NgGrid, NgGridItem, NgGridConfig, NgGridItemConfig, NgGridItemEvent } from 'angular2-grid';
 import { mLineChart } from './widgets/linechart.widget.component'
 import { MapWidgetComponent } from './widgets/map/map.component'
+import { DemoComponent } from './widgets/demo/demo.component'
 
 interface Box {
   id: number;
@@ -70,7 +74,7 @@ export class PageDashboardComponent {
     },
     
     {
-      type: MapWidgetComponent,
+      type: DemoComponent,
       config: { 'dragHandle': '.handle', 'col': 1, 'row': 2, 'sizex': 2, 'sizey': 1, 'title':"מפה" }
     }
 
@@ -124,3 +128,4 @@ export class PageDashboardComponent {
   }
 
 }
+ 
